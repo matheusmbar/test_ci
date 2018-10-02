@@ -8,7 +8,7 @@
 TEMP_DIR=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
 # ## Define project directory path
-REPOSITORY_DIR=$(realpath $(TEMP_DIR)..)/test_ci_cd
+REPOSITORY_DIR=$(realpath $(TEMP_DIR)..)/test_ci
 
 MAKEFILE_DIR = $(REPOSITORY_DIR)
 
