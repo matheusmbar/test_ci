@@ -16,7 +16,3 @@ TEST (base_test, pass_me){
 TEST (base_test, pass_me_too){
     BYTES_EQUAL (2, 2);
 }
-
-TEST (base_test, fail_me){
-    BYTES_EQUAL (1, 0);
-}
