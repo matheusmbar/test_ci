@@ -2,6 +2,8 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
+#include <stdint.h>
+
 int func0 (void);
 
 void func1 (void);
