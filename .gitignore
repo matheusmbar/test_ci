@@ -50,3 +50,15 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+test_build/
+
+gcov/
+
+example\.base_test\.cpp\.html
+
+example\.cpputest_include_CppUTest_Utest\.h\.html
+
+*.html
+
+test_runner\.o\.txt

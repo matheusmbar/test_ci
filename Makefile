@@ -12,8 +12,10 @@ REPOSITORY_DIR=$(realpath $(TEMP_DIR)..)/test_ci
 
 MAKEFILE_DIR = $(REPOSITORY_DIR)
 
-# REPOSITORY_DIR=/home/matheus/dinotronics/brancoraptor_lino_v1
+
 PROJECT_DIR=$(MAKEFILE_DIR)
+SRC_DIRS=$(PROJECT_DIR)/src
+INCLUDE_DIRS+=$(PROJECT_DIR)/inc
 
 ## test folder directory
 TEST_DIR=$(MAKEFILE_DIR)
@@ -32,8 +34,8 @@ TEST_SRC_DIRS=$(TEST_DIR)
 TEST_TARGET=test_runner.o
 
 ## specify where the object and lib files will go
-CPPUTEST_OBJS_DIR=$(TEST_DIR)test_build/objs
-CPPUTEST_LIB_DIR=$(TEST_DIR)test_build/lib
+CPPUTEST_OBJS_DIR=$(TEST_DIR)/test_build/objs
+CPPUTEST_LIB_DIR=$(TEST_DIR)/test_build/lib
 
 #where the cpputest library is located
 CPPUTEST_HOME=$(TEST_DIR)/cpputest
@@ -59,6 +61,13 @@ CPPUTEST_CPPFLAGS=-g
 
 # ## select memory leak detection
 CPPUTEST_USE_MEM_LEAK_DETECTION=Y
+
+CXXFLAGS += -include $(CPPUTEST_HOME)/include/CppUTest/MemoryLeakDetectorNewMacros.h
+CFLAGS += -include $(CPPUTEST_HOME)/include/CppUTest/MemoryLeakDetectorMallocMacros.h
+
+ifndef SILENCE
+	SILENCE = @
+endif
 
 # ## disable warning about C++ 14 compatibility
 
